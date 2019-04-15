@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.domain;
 
-public class Teller
+public class Teller implements Person
 {
     private String tellerID;
     private String tellerName;
