@@ -8,8 +8,10 @@ public class Toiletry implements Item
     private int quantity;
     private double price;
 
-    public Toiletry()
+    private Toiletry(Toiletry.Builder builder)
     {
+        this.toiletry_ID = builder.toiletry_ID;
+        this.price = builder.price;
     }
 
     public Toiletry(int toiletry_ID, String name, String brand_name, int quantity, double price)
@@ -83,6 +85,27 @@ public class Toiletry implements Item
                 '}';
     }
 
+    public static class Builder{
+
+        private int toiletry_ID;
+        private double price;
+
+        public Toiletry.Builder toiletry_ID(int toiletry_ID)
+        {
+            this.toiletry_ID = toiletry_ID;
+            return this;
+        }
+
+        public Toiletry.Builder price(double price) {
+            this.price = price;
+            return this;
+        }
+
+        public Toiletry build() {
+            return new Toiletry(this);
+        }
+
+    }
     @Override
     public String addItem()
     {
