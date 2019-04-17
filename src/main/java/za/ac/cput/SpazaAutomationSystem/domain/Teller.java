@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.domain;
 
-public class Teller implements Person
+public class Teller implements PersonName
 {
     private String tellerID;
     private String tellerName;
@@ -33,6 +33,18 @@ public class Teller implements Person
     public void setTellerName(String tellerName)
     {
         this.tellerName = tellerName;
+    }
+
+    @Override
+    public int getIdValue()
+    {
+        return 0;
+    }
+
+    @Override
+    public String getIdType()
+    {
+        return null;
     }
 
     public static class Builder{
