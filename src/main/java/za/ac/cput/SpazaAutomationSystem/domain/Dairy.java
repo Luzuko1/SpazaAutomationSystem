@@ -6,14 +6,20 @@ public class Dairy implements Item
 {
     private int dairy_ID;
     private String dairy_name;
-    private Date dateArrived;
+    private String dateArrived;
 
     public Dairy()
     {
 
     }
+    private Dairy(Dairy.Builder builder)
+    {
+        this.dairy_ID = builder.dairy_ID;
+        this.dairy_name = builder.dairy_Name;
+        this.dateArrived = builder.dateArrived;
+    }
 
-    private Dairy(int dairy_ID, String dairy_name, Date dateArrived)
+    private Dairy(int dairy_ID, String dairy_name, String dateArrived)
     {
         this.dairy_ID = dairy_ID;
         this.dairy_name = dairy_name;
@@ -40,16 +46,43 @@ public class Dairy implements Item
         this.dairy_name = dairy_name;
     }
 
-    public Date getDateArrived()
+    public String getDateArrived()
     {
         return dateArrived;
     }
 
-    public void setDateArrived(Date dateArrived)
+    public void setDateArrived(String dateArrived)
     {
         this.dateArrived = dateArrived;
     }
 
+    public static class Builder{
+
+        private int dairy_ID;
+        private String dairy_Name;
+        private String dateArrived;
+
+        public Dairy.Builder dairy_ID(int dairy_ID)
+        {
+            this.dairy_ID = dairy_ID;
+            return this;
+        }
+        public Dairy.Builder dairy_Name(String dairy_Name)
+        {
+            this.dairy_Name = dairy_Name;
+            return this;
+        }
+
+        public Dairy.Builder dateArrived(String dateArrived) {
+            this.dateArrived = dateArrived;
+            return this;
+        }
+
+        public Dairy build() {
+            return new Dairy(this);
+        }
+
+    }
     @Override
     public String toString()
     {

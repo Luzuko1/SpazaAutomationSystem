@@ -2,25 +2,30 @@ package za.ac.cput.SpazaAutomationSystem.domain;
 
 public class Customer
 {
-    private int custName;
+    private String custName;
     private double shoppingCost;
 
     public Customer()
     {
     }
 
-    public Customer(int custName, double shoppingCost)
+    private Customer(Customer.Builder builder)
+    {
+        this.custName = builder.custName;
+        this.shoppingCost = builder.shoppingCost;
+    }
+    public Customer(String custName, double shoppingCost)
     {
         this.custName = custName;
         this.shoppingCost = shoppingCost;
     }
 
-    public int getCustName()
+    public String getCustName()
     {
         return custName;
     }
 
-    public void setCustName(int custName)
+    public void setCustName(String custName)
     {
         this.custName = custName;
     }
@@ -35,10 +40,32 @@ public class Customer
         this.shoppingCost = shoppingCost;
     }
 
+    public static class Builder{
+
+        private String custName;
+        private double shoppingCost;
+
+        public Customer.Builder custName(String custName)
+        {
+            this.custName = custName;
+            return this;
+        }
+
+        public Customer.Builder shoppingCost(double amount) {
+            this.shoppingCost = amount;
+            return this;
+        }
+
+        public Customer build() {
+            return new Customer(this);
+        }
+
+    }
+
     @Override
     public String toString()
     {
-        return "Customer{" +
+        return "CustomerFactory{" +
                 "custName=" + custName +
                 ", shoppingCost=" + shoppingCost +
                 '}';

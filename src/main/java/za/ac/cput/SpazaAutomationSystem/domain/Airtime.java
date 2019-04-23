@@ -5,7 +5,7 @@ public class Airtime extends Prepaid
     private int airtimeID;
     private String brand;
     private double amount;
-    private double pricae;
+    private double price;
 
 
     private Airtime(Airtime.Builder builder)
@@ -19,7 +19,7 @@ public class Airtime extends Prepaid
         this.airtimeID = airtimeID;
         this.brand = brand;
         this.amount = amount;
-        this.pricae = pricae;
+        this.price = pricae;
     }
 
     public int getAirtimeID()
@@ -54,12 +54,12 @@ public class Airtime extends Prepaid
 
     public double getPricae()
     {
-        return pricae;
+        return price;
     }
 
-    public void setPricae(double pricae)
+    public void setPricae(double price)
     {
-        this.pricae = pricae;
+        this.price = price;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Airtime extends Prepaid
                 "airtimeID=" + airtimeID +
                 ", brand='" + brand + '\'' +
                 ", amount=" + amount +
-                ", pricae=" + pricae +
+                ", pricae=" + price +
                 '}';
     }
 

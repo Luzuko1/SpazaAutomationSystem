@@ -9,6 +9,15 @@ public class Drinks implements Item
     {
     }
 
+    private Drinks(Drinks.Builder builder)
+    {
+        this.drink_ID = builder.drink_ID;
+        this.drink_Name = builder.drink_Name;
+        this.size = builder.size;
+        this.quantity = builder.size;
+
+    }
+
     public Drinks(int drink_ID, int size, int quantity, String drink_Name)
     {
         this.drink_ID = drink_ID;
@@ -55,6 +64,37 @@ public class Drinks implements Item
     public void setDrink_Name(String drink_Name)
     {
         this.drink_Name = drink_Name;
+    }
+
+    public static class Builder{
+
+        private int drink_ID, size,quantity;
+        private String drink_Name;
+
+        public Drinks.Builder drink_ID(int drink_ID)
+        {
+            this.drink_ID = drink_ID;
+            return this;
+        }
+        public Drinks.Builder drink_Name(String drink_Name)
+        {
+            this.drink_Name = drink_Name;
+            return this;
+        }
+
+        public Drinks.Builder size(int size) {
+            this.size = size;
+            return this;
+        }
+        public Drinks.Builder dateArrived(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public Drinks build() {
+            return new Drinks(this);
+        }
+
     }
 
     @Override

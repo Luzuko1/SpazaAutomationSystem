@@ -13,9 +13,9 @@ public class AirtimeFactoryTest
     @Test
     public void getAirtime()
     {
-        /*String name = "Luzuko";
-       // Airtime airtime1 = AirtimeFactory.getAirtime(price);
+        int amount = 30;
+        Airtime airtime1 = AirtimeFactory.getAirtime(amount);
         System.out.println(airtime1);
-        Assert.assertNotNull(airtime1.getAirtimeID());*/
+        Assert.assertNotNull(airtime1.getAirtimeID());
     }
 }

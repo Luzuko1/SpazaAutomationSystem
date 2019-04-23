@@ -2,7 +2,7 @@ package za.ac.cput.SpazaAutomationSystem.util;
 
 import java.util.UUID;
 
-public class GenarateID
+public class GenerateID
 {
     public static String generateID()
     {

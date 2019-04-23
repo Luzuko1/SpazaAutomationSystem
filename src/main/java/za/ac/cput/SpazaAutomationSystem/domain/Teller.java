@@ -2,7 +2,7 @@ package za.ac.cput.SpazaAutomationSystem.domain;
 
 public class Teller implements PersonName
 {
-    private String tellerID;
+    private Integer tellerID;
     private String tellerName;
 
     private Teller()
@@ -15,12 +15,12 @@ public class Teller implements PersonName
         this.tellerName = builder.tellerName;
     }
 
-    public String getTellerID()
+    public Integer getTellerID()
     {
         return tellerID;
     }
 
-    public void setTellerID(String tellerID)
+    public void setTellerID(Integer tellerID)
     {
         this.tellerID = tellerID;
     }
@@ -49,9 +49,10 @@ public class Teller implements PersonName
 
     public static class Builder{
 
-        private String tellerID, tellerName;
+        private String tellerName;
+        private int tellerID;
 
-        public Builder tellerID(String tellerID) {
+        public Builder tellerID(int tellerID) {
             this.tellerID = tellerID;
             return this;
         }

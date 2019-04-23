@@ -3,7 +3,7 @@ package za.ac.cput.SpazaAutomationSystem.domain;
 public class Electricity extends Prepaid
 {
     private int electricity_ID;
-    private String electrictrity_Company;
+    private String electricity_Company;
     private double amount;
     private double electricity_Price;
 
@@ -11,10 +11,17 @@ public class Electricity extends Prepaid
     {
     }
 
-    private Electricity(int electricity_ID, String electrictrity_Company, double amount, double electricity_Price)
+    private Electricity(Electricity.Builder builder)
+    {
+        this.electricity_ID = builder.electricity_ID;
+        this.electricity_Company = builder.electricity_Company;
+        this.amount = builder.amount;
+        this.electricity_Price = builder.electricity_Price;
+    }
+    private Electricity(int electricity_ID, String electricity_Company, double amount, double electricity_Price)
     {
         this.electricity_ID = electricity_ID;
-        this.electrictrity_Company = electrictrity_Company;
+        this.electricity_Company = electricity_Company;
         this.amount = amount;
         this.electricity_Price = electricity_Price;
     }
@@ -29,14 +36,14 @@ public class Electricity extends Prepaid
         this.electricity_ID = electricity_ID;
     }
 
-    public String getElectrictrity_Company()
+    public String getElectricity_Company()
     {
-        return electrictrity_Company;
+        return electricity_Company;
     }
 
-    public void setElectrictrity_Company(String electrictrity_Company)
+    public void setElectricity_Company(String electricity_Company)
     {
-        this.electrictrity_Company = electrictrity_Company;
+        this.electricity_Company = electricity_Company;
     }
 
     public double getAmount()
@@ -59,12 +66,45 @@ public class Electricity extends Prepaid
         this.electricity_Price = electricity_Price;
     }
 
+    public static class Builder{
+
+        private int electricity_ID;
+        private String electricity_Company;
+        private double amount;
+        private double electricity_Price;
+
+        public Electricity.Builder electricity_ID(int electricity_ID)
+        {
+            this.electricity_ID = electricity_ID;
+            return this;
+        }
+        public Electricity.Builder electricity_Company(String electricity_Company)
+        {
+            this.electricity_Company = electricity_Company;
+            return this;
+        }
+
+        public Electricity.Builder amount(double amount) {
+            this.amount = amount;
+            return this;
+        }
+        public Electricity.Builder electricity_Price(double electricity_Price) {
+            this.electricity_Price = electricity_Price;
+            return this;
+        }
+
+        public Electricity build() {
+            return new Electricity(this);
+        }
+
+    }
+
     @Override
     public String toString()
     {
         return "Electricity{" +
                 "electricity_ID=" + electricity_ID +
-                ", electrictrity_Company='" + electrictrity_Company + '\'' +
+                ", electricity_Company='" + electricity_Company + '\'' +
                 ", amount=" + amount +
                 ", electricity_Price=" + electricity_Price +
                 '}';
