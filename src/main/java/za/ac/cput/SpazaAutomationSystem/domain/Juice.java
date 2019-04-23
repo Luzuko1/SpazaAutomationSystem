@@ -8,6 +8,13 @@ public class Juice extends Drinks
     public Juice()
     {
     }
+    private Juice(Juice.Builder builder)
+    {
+        this.brand_nname = builder.brand_name;
+//        this.electricity_Company = builder.electricity_Company;
+//        this.amount = builder.amount;
+//        this.electricity_Price = builder.electricity_Price;
+    }
 
     public Juice(String brand_nname)
     {
@@ -30,6 +37,22 @@ public class Juice extends Drinks
         this.brand_nname = brand_nname;
     }
 
+    public static class Builder{
+
+        private String brand_name;
+
+        public Juice.Builder brand_name(String brand_name)
+        {
+            this.brand_name = brand_name;
+            return this;
+        }
+
+
+        public Juice build() {
+            return new Juice(this);
+        }
+
+    }
     @Override
     public String toString()
     {

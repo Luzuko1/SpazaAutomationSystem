@@ -9,6 +9,12 @@ public class Owner implements PersonName, PersonIdentity
     {
     }
 
+    private Owner(Owner.Builder builder)
+    {
+        this.owner_ID = builder.owner_ID;
+        this.ownerName = builder.ownerName;
+
+    }
     public Owner(int owner_ID, String ownerName)
     {
         this.owner_ID = owner_ID;
@@ -35,6 +41,31 @@ public class Owner implements PersonName, PersonIdentity
         this.ownerName = ownerName;
     }
 
+    public static class Builder{
+
+        private int owner_ID;
+        private String ownerName;
+
+
+
+        public Owner.Builder owner_ID(int owner_ID)
+        {
+            this.owner_ID = owner_ID;
+            return this;
+        }
+        public Owner.Builder ownerName(String ownerName)
+        {
+            this.ownerName = ownerName;
+            return this;
+        }
+
+
+
+        public Owner build() {
+            return new Owner(this);
+        }
+
+    }
     @Override
     public String toString()
     {

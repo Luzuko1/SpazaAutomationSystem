@@ -4,6 +4,14 @@ public class Energy extends Drinks
 {
     private String brand_name;
 
+
+    private Energy(Energy.Builder builder)
+    {
+        this.brand_name = builder.brand_name;
+        //this.electricity_Company = builder.electricity_Company;
+        //this.amount = builder.amount;
+        //this.electricity_Price = builder.electricity_Price;
+    }
     public Energy(String brand_name)
     {
         this.brand_name = brand_name;
@@ -25,6 +33,22 @@ public class Energy extends Drinks
         this.brand_name = brand_name;
     }
 
+    public static class Builder{
+
+        private String brand_name;
+
+        public Energy.Builder brand_name(String brand_name)
+        {
+            this.brand_name = brand_name;
+            return this;
+        }
+
+
+        public Energy build() {
+            return new Energy(this);
+        }
+
+    }
     @Override
     public String toString()
     {

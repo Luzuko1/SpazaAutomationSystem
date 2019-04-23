@@ -5,17 +5,24 @@ import java.util.Date;
 public class Meat extends Food
 {
     private int meat_ID;
-    private Date dateBought, expireyDate;
+    private String dateBought, expireDate;
 
     public Meat()
     {
     }
+    private Meat(Meat.Builder builder)
+    {
+        this.meat_ID = builder.meat_ID;
+        this.dateBought = builder.dateBought;
+        this.expireDate = builder.expireDate;
 
-    public Meat(int meat_ID, Date dateBought, Date expireyDate)
+    }
+
+    public Meat(int meat_ID, String dateBought, String expireDate)
     {
         this.meat_ID = meat_ID;
         this.dateBought = dateBought;
-        this.expireyDate = expireyDate;
+        this.expireDate = expireDate;
     }
 
     public int getMeat_ID()
@@ -28,33 +35,60 @@ public class Meat extends Food
         this.meat_ID = meat_ID;
     }
 
-    public Date getDateBought()
+    public String getDateBought()
     {
         return dateBought;
     }
 
-    public void setDateBought(Date dateBought)
+    public void setDateBought(String dateBought)
     {
         this.dateBought = dateBought;
     }
 
-    public Date getExpireyDate()
+    public String getExpireDate()
     {
-        return expireyDate;
+        return expireDate;
     }
 
-    public void setExpireyDate(Date expireyDate)
+    public void setExpireDate(String  expireDate)
     {
-        this.expireyDate = expireyDate;
+        this.expireDate = expireDate;
     }
 
+    public static class Builder{
+
+        private int meat_ID;
+        private String dateBought, expireDate;
+
+        public Meat.Builder meat_ID(int meat_ID)
+        {
+            this.meat_ID = meat_ID;
+            return this;
+        }
+        public Meat.Builder dateBought(String dateBought)
+        {
+            this.dateBought = dateBought;
+            return this;
+        }
+
+        public Meat.Builder expreDate(String expireDate) {
+            this.expireDate = expireDate;
+            return this;
+        }
+
+
+        public Meat build() {
+            return new Meat(this);
+        }
+
+    }
     @Override
     public String toString()
     {
         return "Meat{" +
                 "meat_ID=" + meat_ID +
                 ", dateBought=" + dateBought +
-                ", expireyDate=" + expireyDate +
+                ", expireyDate=" + expireDate +
                 '}';
     }
 }

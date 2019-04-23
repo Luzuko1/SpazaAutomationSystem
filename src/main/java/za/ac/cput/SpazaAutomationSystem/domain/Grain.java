@@ -5,13 +5,20 @@ import java.util.Date;
 public class Grain extends Food
 {
     private int grain_ID, quantity;
-    private Date dateBought;
+    private String dateBought;
 
     public Grain()
     {
     }
 
-    public Grain(int grain_ID, int quantity, Date dateBought)
+    private Grain(Grain.Builder builder)
+    {
+        this.grain_ID = builder.grain_ID;
+        this.quantity = builder.quantity;
+        this.dateBought = builder.dateBought;
+        //this.price = builder.price;
+    }
+    public Grain(int grain_ID, int quantity, String dateBought)
     {
         this.grain_ID = grain_ID;
         this.quantity = quantity;
@@ -38,16 +45,43 @@ public class Grain extends Food
         this.quantity = quantity;
     }
 
-    public Date getDateBought()
+    public String getDateBought()
     {
         return dateBought;
     }
 
-    public void setDateBought(Date dateBought)
+    public void setDateBought(String dateBought)
     {
         this.dateBought = dateBought;
     }
 
+    public static class Builder{
+
+        private int grain_ID, quantity;
+        private String dateBought;
+
+        public Grain.Builder grain_ID(int grain_ID)
+        {
+            this.grain_ID = grain_ID;
+            return this;
+        }
+        public Grain.Builder quantity(int quantity)
+        {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public Grain.Builder dateBought(String dateBought) {
+            this.dateBought = dateBought;
+            return this;
+        }
+
+
+        public Grain build() {
+            return new Grain(this);
+        }
+
+    }
     @Override
     public String toString()
     {

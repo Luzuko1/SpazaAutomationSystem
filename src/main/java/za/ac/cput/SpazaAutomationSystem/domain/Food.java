@@ -10,6 +10,13 @@ public class Food implements Item
     {
     }
 
+    private Food(Food.Builder builder)
+    {
+        this.food_ID = builder.food_ID;
+        this.name = builder.name;
+        this.description = builder.description;
+        this.price = builder.price;
+    }
     public int getFood_ID()
     {
         return food_ID;
@@ -60,7 +67,37 @@ public class Food implements Item
                 ", price=" + price +
                 '}';
     }
+    public static class Builder{
 
+        private int food_ID;
+        private String name, description;
+        private double price;
+
+        public Food.Builder food_ID(int food_ID)
+        {
+            this.food_ID = food_ID;
+            return this;
+        }
+        public Food.Builder name(String name)
+        {
+            this.name = name;
+            return this;
+        }
+
+        public Food.Builder description(String description) {
+            this.description = description;
+            return this;
+        }
+        public Food.Builder price(double price) {
+            this.price = price;
+            return this;
+        }
+
+        public Food build() {
+            return new Food(this);
+        }
+
+    }
     @Override
     public String addItem()
     {
