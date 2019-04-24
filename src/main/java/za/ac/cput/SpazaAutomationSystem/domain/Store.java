@@ -12,6 +12,14 @@ public class Store
     {
     }
 
+    private Store(Builder builder)
+    {
+        this.store_ID = builder.store_ID;
+        this.store_name = builder.store_name;
+        this.store_description = builder.store_description;
+        this.store_address = builder.store_address;
+    }
+
     public Store(int store_ID, String store_name, String store_description, String store_address)
     {
         this.store_ID = store_ID;
@@ -60,6 +68,38 @@ public class Store
         this.store_address = store_address;
     }
 
+    public static class Builder{
+
+        private int store_ID;
+        private String store_name;
+        private String store_description;
+        private String store_address;
+
+        public Builder store_ID(int store_ID) {
+            this.store_ID = store_ID;
+            return this;
+        }
+
+        public Builder store_name(String store_name) {
+            this.store_name = store_name;
+            return this;
+        }
+        public Builder store_description(String store_description) {
+            this.store_description = store_description;
+            return this;
+        }
+
+        public Builder store_address(String store_address) {
+            this.store_address = store_address;
+            return this;
+        }
+
+
+        public Store build() {
+            return new Store(this);
+        }
+
+    }
     @Override
     public String toString()
     {

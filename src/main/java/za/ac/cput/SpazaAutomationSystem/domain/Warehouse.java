@@ -9,6 +9,12 @@ public class Warehouse
     public Warehouse()
     {
     }
+    private Warehouse(Builder builder)
+    {
+        this.warehouse_ID = builder.warehouse_ID;
+        this.warehouse_name = builder.warehouse_name;
+        this.address = builder.address;
+    }
 
     public Warehouse(int warehouse_ID, String warehouse_name, String address)
     {
@@ -47,6 +53,31 @@ public class Warehouse
         this.address = address;
     }
 
+    public static class Builder{
+
+        private int warehouse_ID;
+        private String warehouse_name, address;
+
+        public Builder warehouse_ID(int warhouse) {
+            this.warehouse_ID = warehouse_ID;
+            return this;
+        }
+
+        public Builder warehous_name(String warehouse_name) {
+            this.warehouse_name = warehouse_name;
+            return this;
+        }
+
+        public Builder address(String address) {
+            this.address = address;
+            return this;
+        }
+
+        public Warehouse build() {
+            return new Warehouse(this);
+        }
+
+    }
     @Override
     public String toString()
     {

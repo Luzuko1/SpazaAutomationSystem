@@ -68,7 +68,7 @@ public class Drinks implements Item
 
     public static class Builder{
 
-        private int drink_ID, size,quantity;
+        private int drink_ID, size, quantity;
         private String drink_Name;
 
         public Drinks.Builder drink_ID(int drink_ID)
@@ -82,14 +82,16 @@ public class Drinks implements Item
             return this;
         }
 
+        public Drinks.Builder quantity(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
         public Drinks.Builder size(int size) {
             this.size = size;
             return this;
         }
-        public Drinks.Builder dateArrived(int quantity) {
-            this.quantity = quantity;
-            return this;
-        }
+
 
         public Drinks build() {
             return new Drinks(this);
