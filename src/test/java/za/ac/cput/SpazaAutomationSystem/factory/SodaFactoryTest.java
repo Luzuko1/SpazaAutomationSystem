@@ -10,5 +10,6 @@ public class SodaFactoryTest
     @Test
     public void getSoda()
     {
+
     }
 }
