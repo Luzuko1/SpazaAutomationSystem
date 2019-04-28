@@ -3,26 +3,44 @@ package za.ac.cput.SpazaAutomationSystem.repository.Implement;
 import za.ac.cput.SpazaAutomationSystem.domain.Energy;
 import za.ac.cput.SpazaAutomationSystem.repository.EnergyRepository;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class EnergyRepositoryImpl implements EnergyRepository
 {
+    private static EnergyRepositoryImpl repository = null;
+    private Set<Energy>  energy;
+
+    private EnergyRepositoryImpl()
+    {
+        this.energy = new HashSet<>();
+    }
+
+    public static EnergyRepositoryImpl getRepository()
+    {
+        if (repository ==null) repository = new EnergyRepositoryImpl();
+        return repository;
+    }
+
+
+
     @Override
     public Set<Energy> getAll()
     {
-        return null;
+        return this.energy;
     }
 
     @Override
     public Energy create(Energy energy)
     {
-        return null;
+        this.energy.add(energy);
+        return energy;
     }
 
     @Override
     public Energy update(Energy energy)
     {
-        return null;
+        return energy;
     }
 
     @Override

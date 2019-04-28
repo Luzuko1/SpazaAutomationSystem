@@ -3,18 +3,18 @@ package za.ac.cput.SpazaAutomationSystem.Repository.impl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cput.SpazaAutomationSystem.domain.Electricity;
-import za.ac.cput.SpazaAutomationSystem.repository.Implement.ElectricityRepositoryImpl;
+import za.ac.cput.SpazaAutomationSystem.domain.Grain;
+import za.ac.cput.SpazaAutomationSystem.repository.Implement.GrainRepositoryImpl;
 
 import java.util.Set;
 
-public class ElctricityRepositoryImplTest
+public class GrainRepositoryImplTest
 {
-    private ElectricityRepositoryImpl repository;
+    private GrainRepositoryImpl repository;
 
     @Before
     public void setUp() throws Exception {
-        this.repository = ElectricityRepositoryImpl.getRepository();
+        this.repository = GrainRepositoryImpl.getRepository();
     }
 
     @Test
@@ -38,7 +38,7 @@ public class ElctricityRepositoryImplTest
 
     @Test
     public void getAll() {
-        Set<Electricity> students = this.repository.getAll();
+        Set<Grain> students = this.repository.getAll();
         Assert.assertEquals(1, students.size());
     }
 }

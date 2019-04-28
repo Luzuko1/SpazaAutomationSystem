@@ -18,7 +18,7 @@ public class DrinkRepositoryImpl implements DrinkRepository
         this.drinks = new HashSet<>();
     }
 
-    public DrinkRepositoryImpl getRepository()
+    public static DrinkRepositoryImpl getRepository()
     {
         if (repository == null) repository = new DrinkRepositoryImpl();
         return repository;
