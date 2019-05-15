@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Owner;
+import za.ac.cput.SpazaAutomationSystem.domain.People.Owner;
 
 import java.util.Set;
 

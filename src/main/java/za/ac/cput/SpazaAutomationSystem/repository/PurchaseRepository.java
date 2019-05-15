@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Purchase;
+import za.ac.cput.SpazaAutomationSystem.domain.Function.Purchase;
 
 import java.util.Set;
 

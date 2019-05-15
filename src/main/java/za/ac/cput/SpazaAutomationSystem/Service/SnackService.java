@@ -1,5 +1,5 @@
 package za.ac.cput.SpazaAutomationSystem.Service;
 
-public interface SnackService
-{
+public interface SnackService{
+
 }

@@ -1,7 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Egg;
-import za.ac.cput.SpazaAutomationSystem.domain.Electricity;
+import za.ac.cput.SpazaAutomationSystem.domain.Prepaid.Electricity;
 
 import java.util.Set;
 

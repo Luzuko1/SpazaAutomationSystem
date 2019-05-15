@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository.Implement;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Store;
+import za.ac.cput.SpazaAutomationSystem.domain.Place.Store;
 import za.ac.cput.SpazaAutomationSystem.repository.StoreRepository;
 
 import java.util.Set;

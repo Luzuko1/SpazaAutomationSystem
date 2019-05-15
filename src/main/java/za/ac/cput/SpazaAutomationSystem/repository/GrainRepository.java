@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Grain;
+import za.ac.cput.SpazaAutomationSystem.domain.Food.Grain;
 
 import java.util.Set;
 

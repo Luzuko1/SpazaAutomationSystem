@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Milk;
+import za.ac.cput.SpazaAutomationSystem.domain.Dairy.Milk;
 
 import java.util.Set;
 

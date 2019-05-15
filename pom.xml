@@ -8,6 +8,12 @@
   <artifactId>SpazaAutomationSystem</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.4.RELEASE</version>
+  </parent>
+
   <name>SpazaAutomationSystem</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -25,7 +31,16 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.1.4.RELEASE</version>
+    </dependency>
+
   </dependencies>
+
+
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

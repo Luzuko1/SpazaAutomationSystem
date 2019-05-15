@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.Service;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Airtime;
+import za.ac.cput.SpazaAutomationSystem.domain.Prepaid.Airtime;
 
 import java.util.Set;
 

@@ -1,6 +1,6 @@
 package za.ac.cput.SpazaAutomationSystem.repository;
 
-import za.ac.cput.SpazaAutomationSystem.domain.Energy;
+import za.ac.cput.SpazaAutomationSystem.domain.Baverage.Energy;
 
 import java.util.Set;
 
